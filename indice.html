@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contador de Clicks</title>
+    <style>
+        body {
+            background-color: green; /* Establece el color de fondo verde */
+            color: white; /* Cambia el color del texto a blanco para que sea legible en el fondo verde */
+            font-family: Arial, sans-serif; /* Cambia la fuente del texto */
+            padding: 20px; /* Añade espacio alrededor del contenido para mejorar la legibilidad */
+        }
+
+        button {
+            background-color: white; /* Establece el color de fondo del botón a blanco */
+            color: green; /* Cambia el color del texto del botón a verde */
+            padding: 10px 20px; /* Añade espacio interno al botón */
+            font-size: 16px; /* Cambia el tamaño de la fuente del botón */
+            border: 2px solid green; /* Añade un borde al botón */
+            border-radius: 5px; /* Añade esquinas redondeadas al botón */
+            cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+            transition: background-color 0.3s, color 0.3s; /* Agrega una transición suave al cambiar los colores */
+        }
+
+        button:hover {
+            background-color: transparent; /* Hace que el fondo del botón se vuelva transparente al pasar el cursor sobre él */
+            color: white; /* Cambia el color del texto del botón a blanco cuando se pasa el cursor sobre él */
+        }
+
+        button:focus {
+            outline: none; /* Elimina el contorno del botón cuando está enfocado */
+        }
+
+        #video-container {
+            margin-top: 20px; /* Añade espacio sobre el video */
+        }
+
+        iframe {
+            width: 100%; /* Establece el ancho del video al 100% */
+            height: 400px; /* Establece la altura del video */
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Contador de Clicks</h1>
+    
+    <button id="boton">Haz clic aquí</button>
+    <p>Has hecho clic <span id="contador">0</span> veces.</p>
+
+    <div id="video-container">
+        <!-- Cambié la URL del video a la que proporcionaste -->
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/ia14UxJWII4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+
+    <script>
+        // Función para incrementar el contador cuando se hace clic en el botón
+        function contarClicks() {
+            // Obtener el elemento del contador
+            var contadorElemento = document.getElementById("contador");
+            // Obtener el valor actual del contador
+            var contador = parseInt(contadorElemento.textContent);
+            // Incrementar el contador
+            contador++;
+            // Actualizar el texto del contador
+            contadorElemento.textContent = contador;
+        }
+
+        // Obtener el botón
+        var boton = document.getElementById("boton");
+
+        // Añadir un event listener para el clic en el botón
+        boton.addEventListener("click", contarClicks);
+    </script>
+
+</body>
+</html>
